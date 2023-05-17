@@ -1,0 +1,121 @@
+h2{
+    font-family: "merriweather";
+}
+body{
+    overflow-x: hidden;
+}
+.nav-item{
+   
+    font-family:"montserrat"
+}
+.bg-img{
+    width:75%;
+    height:16.625rem;
+}
+
+.prof-box{
+        padding-top: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 50px;
+        flex-wrap: wrap;
+}
+.text{
+    padding-top: 60px;
+    padding-left: 20px;
+    font-family: "merriweather";
+}
+.overlap{
+    position: relative;
+    bottom: 10px;
+}
+.hr-line{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 45px;
+    margin-right: 45px;
+    border-style:solid;
+    border-width: 3px;
+    color: blue ;
+    
+}
+
+.row{
+    padding:10px 50px 10px 50px;
+
+}
+.h-150{
+    height:300px;
+    width:400px;
+}
+.fa-solid{
+    padding-right: 20px;
+}
+  
+.navbar__style{
+    background-color: #000000;
+}
+
+.profile_gallery{
+max-width: 450px;
+max-height: 500px;
+
+}
+
+.profile_pic{
+    
+    width: 200px;
+    height: 200px;
+border-radius: 100%;
+
+   
+}
+
+.section1{
+    margin-bottom: 5px;
+    
+   
+    
+
+ 
+}
+.banner{
+    opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:67%;
+  z-index: -1;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+  a{
+    color:#ffffffe0 !important;
+}
+
+.follow__switch{
+    padding-left: 0p;
+}
+.section1{
+    padding:30px;
+    background-image: url("../images/bg6.jpg");
+    background-size: auto;
+    
+    
+}
+.user{
+    color:#fff;
+}
+.section2{
+    padding:30px;
+    background-image: url("../images/bg10.jpg");
+    background-size: 1530px;
+}
+user2{
+    color:#000000;
+}

@@ -1,0 +1,88 @@
+
+  
+
+<nav class="navbar navbar__style navbar-expand-lg p fixed-top">
+    <div class="container-fluid navbar-container">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/cart"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>  CART</a>
+          </li>
+         
+          
+          <li class="nav-item">
+            <a class="nav-link active fs-6 px-5" aria-current="page" href="/index"><i class="fa-solid fa-home" style="color: #ffffff;"></i> HOME </a>
+          </li>
+          
+          
+          
+          
+          
+            
+         
+        </ul>
+
+
+
+        
+
+        <div>
+          <form action="/upload" method="get" class="my-2 mx-2">
+              
+              <button  class="btn btn-light" type="submit">POST</button>
+              
+            </form>
+      </div >
+
+      <div>
+        <form action="/uploadEcom" method="get" class="my-2 mx-2">
+            
+            <button  class="btn btn-light" type="submit">POST Ecom</button>
+            
+          </form>
+    </div >
+        
+
+          <!-- Button trigger modal -->
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/uploadprofile" method="POST" enctype="multipart/form-data">
+                <div class="py-5 photo">
+                    <label for="bio" class="right">bio</label>
+                    <input type="text" id="bio" placeholder="Name" value="" name="bio" required>
+                </div>
+                
+                <div class="pb-5" class="file">
+                    <label for="img" class="img">Upload Image</label>
+                    <input type="file" id="img" name="img" >
+                </div>
+                <div class="pb-5">
+                    <button class="sub " type="submit"><i class="fa-solid fa-photo-film "></i>Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

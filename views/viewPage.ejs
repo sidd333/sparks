@@ -1,0 +1,71 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/navbar.ejs") %>
+
+
+
+
+  
+<div  class="card bg-secondary">
+
+    <% items.map((item,index)=>{ %>
+
+
+        <div class="card-body ">
+
+            <div id="carouselExampleControls<%=index%>" class="carousel slide " data-bs-ride="carousel">
+                <div class="carousel-inner view__item mx-auto">
+
+
+                    <%item.img.map((a)=>{ %>
+
+                        <div class="carousel-item  active  ">
+                            <img src="data:image/<%=a.contentType%>;base64,<%=a.data.toString('base64')%>"
+                               class="img-fluid" >
+                        </div>
+
+
+
+                        <% })%>
+
+
+
+
+
+
+
+
+
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleControls<%=index%>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleControls<%=index%>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="mx-auto w-50">
+                <form action="/addToCart/<%=item._id%>" method="post">
+                    <button type="submit" class="btn btn-warning">Add to Cart</button>
+                </form>
+                <p class="text-white">PRICE : <%=item.price%></p>
+                <p class="text-white">  <%=item.name%></p>
+                <p class="text-white">Details: <%=item.desc%></p>
+                
+            </div>
+           
+        </div>
+
+
+        <% }) %>
+
+
+
+
+</div>
+
+
+    <%- include("partials/footer.ejs") %>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="css/Upload.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- fonts Awesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <script defer src="https://cdn.crop.guide/loader/l.js?c=123ABC"></script>
+
+    <!--ICON of the Website  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark top">
+        <a class="navbar-brand px-5" href="#"><h2 class="">SPARKS</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ms-auto px-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Profile.html" target="_blank">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">News feed</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="">Upload Image </h1>
+<hr>
+<div class="post shadow-lg">
+    <form action="/ecom/uploadpost" method="POST" enctype="multipart/form-data">
+        <div class="py-5 photo">
+            <label for="name" class="right">Image Title</label>
+            <input type="text" id="name" placeholder="Name" value="" name="name" required>
+        </div>
+        <div class="pb-5 d-flex align-items-center">
+            <label for="desc" class="left">Image Description</label>
+            <textarea id="desc" name="desc" value="" rows="2" placeholder="Description" required>
+            </textarea>
+        </div>
+        <div class="py-5 photo">
+            <label for="price" class="price">price</label>
+            <input type="number" id="price" placeholder="$0.1" value="0.0" name="price" required>
+        </div>
+        <div class="pb-5" class="file">
+            <label for="image" class="img">Upload Image</label>
+            <input type="file" id="image" name="image" multiple required>
+        </div>
+        <div class="pb-5">
+            <button class="sub " type="submit"><i class="fa-solid fa-photo-film "></i>Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

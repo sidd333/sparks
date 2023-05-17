@@ -1,0 +1,147 @@
+<%- include("partials/head.ejs") %>
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="container-fluid" style="padding-top: 69px;">
+        <div class="row flex-nowrap ">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark position-fixed">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/profile/<%=user._id%>" class="nav-link align-middle px-0">
+                                 <span class="ms-1 d-none d-sm-inline">My profile</span>
+                            </a>
+                        </li>
+                        
+                            
+                           
+                                <li class="nav-item mt-4">
+                                    <form action="/logout" method="post" class=" my-2">
+                                        <button class=" btn btn-danger" type="submit"></i>logout</button>
+                                      </form>
+                                </li>
+                                
+                           <li class="nav-item">
+                            <form class="d-flex my-4" role="search" action="/newsfeed/search" method="POST">
+                                <input class="form-control me-2" type="search" name="name" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-success" type="submit">Search</button>
+                              </form>
+                           </li>
+                                
+                        
+                       
+                </div>
+            </div>
+          
+        </div>
+    </div>
+
+    
+
+
+
+        
+
+
+
+
+        <!-- <form action="/newsfeed/search" method="POST" >
+        
+        <div class="pb-5 d-flex align-items-center">
+            <label for="name" class="left">Username</label>
+            <textarea id="name" name="name" value="" rows="2" placeholder="Description" required>
+            </textarea>
+        </div>
+       
+            <button class="sub " type="submit"><i class="fa-solid "></i>Submit</button>
+        </div>
+    </form> -->
+
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+
+
+
+
+        <!-- <div class="post shadow-lg">
+        <form action="/uploadprofile" method="POST" enctype="multipart/form-data">
+            <div class="py-5 photo">
+                <label for="bio" class="right">bio</label>
+                <input type="text" id="bio" placeholder="Name" value="" name="bio" required>
+            </div>
+            
+            <div class="pb-5" class="file">
+                <label for="img" class="img">Upload Image</label>
+                <input type="file" id="img" name="img" >
+            </div>
+            <div class="pb-5">
+                <button class="sub " type="submit"><i class="fa-solid fa-photo-film "></i>Submit</button>
+            </div>
+        </form>
+    </div> -->
+
+
+        <!-- Button trigger modal -->
+
+
+        <div class="col py-3">
+            <div class="container py-5 w-50 h-25">
+                <div class="row mx-auto in">
+                    <% items.map((image)=>{ %>
+    
+                        <div class="card col-12 mx-auto my-4">
+    
+                            <div class="card-header" style="height:10 rem">
+                                <img src="data:image/<%=image.userId.img.contentType%>;base64,<%=image.userId.img.data.toString('base64')%>"
+                                     style="border-radius: 100%; width: 9rem; height:9rem">
+                                <form action="/profile/<%=image.userId._id %>" method="get" class="d-inline">
+                                    <button class="btn shadow-none" type="submit">
+                                        <%=image.userId.username %>
+                                    </button>
+                                    <p class="text-muted m-2">
+                                        <%= image.createdAt?image.createdAt.toDateString():"aug 12"%>
+                                    </p>
+                                </form>
+                            </div>
+    
+    
+                            <div class="card-body">
+                                <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+                                    class="img-fluid mx-auto ">
+    
+    
+    
+    
+                                <p>
+                                    <%= image.desc %>
+                                </p>
+                                <p class="w-25 d-inline">
+                                    <%= image.likes %>
+                                </p>
+                                
+                                
+    
+    
+                                
+                                <form action="/like/<%=image._id %>" method="post" class="d-inline">
+    
+                                    <button type="submit" class="border-0 bg-transparent"><i class="fa-solid fa-splotch"></i></button>
+    
+                                </form>
+                                <i class="fa-solid fa-sparkles"></i>
+    
+    
+    
+                            </div>
+    
+                        </div>
+                        <% }) %>
+                </div>
+    
+            </div>
+        </div>
+        <%- include("partials/footer.ejs") %>

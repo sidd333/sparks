@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(219, 228, 233);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.navbar__style{
+    background-color: #000000;
+}
+a{
+    color:#ffffffe0 !important;
+}
+.profile_pic{
+    
+    width: 200px;
+    height: 200px;
+border-radius: 100%;
+
+   
+}

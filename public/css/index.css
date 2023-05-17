@@ -1,0 +1,156 @@
+
+#title{
+    background-color: #4a96c6;
+    
+}
+.heading{
+    padding-top:4.5rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #fff;
+    font-size: 2.75rem;
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+.container-fluid{
+    padding: .5% 1%;
+}
+
+h3{
+    
+    font-weight: bold;
+
+}
+p{
+    color: #8f8f8f;
+    font-family: "montserrat";
+}
+
+/* Navigation Bar */
+.navbar-brand{
+    font-size: 2rem;
+    font-weight:bold ;
+    padding-bottom: 2;
+   
+
+}
+.nav-item{
+    padding: 0 18px;
+    font-family: 'montserrat';
+    font-size:1.5rem;
+}
+
+
+/* Download buttons */
+.download-button{
+    margin:5% 3% 5% 0;
+
+}
+
+.title-image{
+    width:70%;
+    transform:rotate(20deg);
+    margin-left:120px ;
+    
+}
+/* features */
+
+#features{
+    padding: 2% 10% 0 10%;
+    position:relative;
+    background-color: #fff;
+}
+.feature-box{
+    text-align: center;
+    padding:5%;
+}
+.icon{
+    color:#ef8172;
+    margin-bottom: 1rem;
+}
+.icon:hover{
+    color:red;
+}
+#reviews{
+    background-color:#ef8172 ;
+    text-align: center;
+   
+
+}
+.carousel-item{
+    padding: 7% 15%;
+}
+.review-msg{
+    font-weight: bold;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-family: "montserrat";
+
+}
+.review-img{
+    width:15%;
+    border-radius:100%;
+    margin:20px;
+} 
+#press{
+    background-color:#ef8172 ;
+    text-align: center;
+    padding-bottom: 3%;
+}
+.press-logo{
+    width:15%;
+    margin:20px 20px 50px;
+}
+/* pricing section */
+#pricing{
+    padding: 100px;
+    text-align: center;
+}
+.sign{
+    width: 100%;
+}
+.pricing-column{
+    padding: 3% 2%;
+}
+h2{
+    font-size: 2.5rem;
+    font-family: "montserrat";
+    font-weight: bold;
+}
+/* p{
+    color:#000;
+    font-size: "montserrat";
+} */
+@media (max-width:1028px){
+    .title-image{
+        transform: rotate(0);
+    }
+    #title{
+        text-align: center;
+    }
+}
+#cta{
+    text-align: center;
+    background-color: #4a96c6;
+    padding-top: 50px;
+    
+
+}
+.foot{
+    font-size: 2.5rem;
+    width:50%;
+    margin:auto;
+    line-height: 1.5;
+}
+#footer{
+    background-color: #fff;
+    text-align: center;   
+}
+.copy{
+    color: black;
+    font-weight: bold;
+}
+.pr-2{
+    padding-right: 10px;
+}

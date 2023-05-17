@@ -1,0 +1,82 @@
+h1{
+    font-family: "Merriweather";
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 10px;
+   
+}
+body{
+    background-image: url("../images/bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.nav-item{
+    font-size: 1.5rem;
+    font-family:"montserrat"
+}
+
+.post{
+    margin: auto;
+    text-align: center;
+    border: solid 3px black;
+    width:600px;
+    font-family: "montserrat";
+    border-radius: 7%;
+    background-color: hsla(180, 6%, 28%, 0.07) ;
+    font-weight: bold;
+   
+  
+}
+.left{
+    padding-left: 50px;
+    padding-right: 25px;
+
+}
+.right{
+    padding-left:0px;
+    padding-right: 30px;
+
+
+}
+.img{
+    padding-right:30px ;
+    padding-left: 10px;
+    
+}
+.file{
+    
+    display: inline-block;
+}
+.photo{
+    width:500px ;
+}
+.sub{
+    border-radius: 10%;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+
+}
+.fa-solid{
+    padding-right: 10px;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 640px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .cropper-view-box,
+  .cropper-face {
+    border-radius: 50%;
+  }
+
+  /* The css styles for `outline` do not follow `border-radius` on iOS/Safari (#979). */
+  .cropper-view-box {
+    outline: 0;
+    box-shadow: 0 0 0 1px #39f;
+  }

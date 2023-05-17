@@ -1,0 +1,88 @@
+
+
+
+
+/* entry */
+body{
+    background-color: #eeeeee;
+}
+
+a{
+    color:#ffffffe0 !important;
+}
+.list-group-item-action:hover{
+    color: #46244C;
+    background-color: #62256c;
+}
+
+textarea{
+    resize:none;
+}
+
+/*classes*/
+
+.page_container{
+    padding:2% 15%;
+}
+
+/* navbar*/
+.navbar__style{
+    background-color: #000000;
+
+}
+
+/* home page */
+.quotes-home-icon{
+    color:#46244C;
+    font-size: 3rem;
+}
+.register__btn{
+    border:1px solid #46244C;
+    color:#46244C !important;
+}
+.purple__btn{
+    background-color: #46244C;
+    color:#e6dfdf !important;
+}
+.purple__btn:hover{
+    background-color: #62256c;
+    color:#FFF !important; 
+}
+.register__btn:hover{
+    border:1px solid #62256c !important;
+}
+
+/* quotes page */
+.quote_content{
+    border:5px solid#eee;
+    border-radius: 10px;
+    color :#FFF;
+    -webkit-text-stroke: 0.5px #333;
+}
+
+.quote__text{
+    height:220px;
+    font-weight:600;
+}
+
+/* Media Queries */
+@media screen and(max-width:991px) {
+    .page_container{
+        padding: 2% 7%;
+        
+    }
+    
+}
+@media screen and(min-width:992px) {
+    .navbar-container{
+        padding-left: 15%;
+        padding-right:15%;
+    }
+    
+}
+
+
+.view__item{
+    height: 50%;
+    width: 50%;
+}

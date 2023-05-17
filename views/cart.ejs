@@ -1,0 +1,120 @@
+<%- include("partials/head.ejs") %>
+    <%- include("partials/navbar.ejs") %>
+        <% let totalPrice=0; %>
+            <div class="container-fluid" id="cunt">
+                <div class="row flex-nowrap">
+                    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                        <div
+                            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/"
+                                class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                                <span class="fs-5 d-none d-sm-inline">Menu</span>
+                            </a>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                                id="menu">
+
+                                <li class="nav-item mt-4">
+                                    <form action="/logout" method="post" class=" my-2">
+                                        <button class=" btn btn-danger" type="submit"></i>logout</button>
+                                    </form>
+                                </li>
+
+                                <li class="nav-item">
+                                    <form class="d-flex my-4" role="search" action="/newsfeed/search" method="POST">
+                                        <input class="form-control me-2" type="search" name="name" placeholder="Search"
+                                            aria-label="Search">
+                                        <button class="btn btn-outline-success" type="submit">Search</button>
+                                    </form>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#"><button class="btn btn-outline-info" id="checkout">Checkout</button></a>
+                                </li>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col py-3">
+                        <div class="container w-50">
+                            <div>
+                                <% items.cart.map((item,index)=>{ %>
+
+                                    <div class="">
+
+                                        <div id="carouselExampleControls<%=index%>" class="carousel slide "
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+
+                                                <div class="card my-2">
+                                                    <div class="card-header">
+                                                        <%=item.item.name%>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <%item.item.img.map((item)=>{ %>
+                                                                <div class="carousel-item active">
+                                                                    <img src="data:image/<%=item.contentType%>;base64,<%=item.data.toString('base64')%>"
+                                                                        class="card-img-top img-fluid" />
+                                                                </div>
+                                                               <%   })%>
+
+                                                                <button class="carousel-control-prev" type="button"
+                                                                    data-bs-target="#carouselExampleControls<%=index%>"
+                                                                    data-bs-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="visually-hidden">Previous</span>
+                                                                </button>
+                                                                <button class="carousel-control-next" type="button"
+                                                                    data-bs-target="#carouselExampleControls<%=index%>"
+                                                                    data-bs-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="visually-hidden">Next</span>
+                                                                </button>
+                                                        </div>
+                                                        
+                                                        
+                                                    </div>
+                                                    <div class="bg-dark text-white">
+                                                        <p class="d-inline mx-4">PRICE : ₹ <%=item.item.price%>
+                                                        </p>
+                                                        <p class="d-inline ">QUANTITY : <%=item.quantity%>
+                                                        </p>
+                                                        <form action="/addToCart/<%=item.item._id%>" method="post" class="d-inline mx-2">
+                                                            <button type="submit" class="btn btn-secondary">+</button>
+                                                        </form>
+                                                        <form action="/removeFromCart/<%=item.item._id%>" method="post" class="d-inline">
+                                                            <button type="submit"  class="btn btn-secondary">-</button>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <div>
+                                                    
+                                                </div>
+
+                                                <%totalPrice +=item.item.price*item.quantity%>
+
+
+                                                    <%} )%>
+
+                                                        <div><a class=" btn btn-warning" href="#cunt">total price:
+                                                                <%=totalPrice%>
+                                                            </a> </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <%- include("partials/footer.ejs") %>
