@@ -14,6 +14,7 @@ var imageSchema = new mongoose.Schema({
     userId:{ type: Schema.Types.ObjectId, ref: 'User'},
     likes:{ type: Number , default: 0},
     likedby:[{ type: Schema.Types.ObjectId,ref: 'User' }],
+    comment:[{comment: {type: String} , by:{type: Schema.Types.ObjectId, ref: 'User'}} ]
     
 },
 { timestamps: true });

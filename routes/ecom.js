@@ -142,14 +142,18 @@ router.get("/cart", async (req, res) => {
 router.get("/ecom/viewPage/:_id", async (req, res) => {
     try {
         const items = await ecom.find({ _id: req.params._id });
-
-        res.render("viewPage", { items });
+        const accountUser = await user.find({ "_id": req.user._id }).lean();
+        res.render("viewPage", { items:items , user:accountUser});
 
     } catch (error) {
         console.log(error.stack)
     }
 });
 
-
+router.get("/sproduct", async (req,res)=>{
+    const featuredItem = ecom.find().limit(8);
+    const newItem = ecom.find().sort({createdAt:-1}).limit(8);
+    res.render("sproduct",{featuredItem,newItem})
+});
 
 module.exports = router;

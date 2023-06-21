@@ -11,7 +11,7 @@ router.get("/index", (req, res) => {
 })
 
 router.get("/",(req, res) => {
-    res.render("entry")
+    res.render("register")
 });
 
 router.get("/profile/:_id",async(req, res) => {

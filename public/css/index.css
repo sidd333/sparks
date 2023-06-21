@@ -49,8 +49,8 @@ p{
 
 .title-image{
     width:70%;
-    transform:rotate(20deg);
-    margin-left:120px ;
+    padding-top: 10px;
+    margin-left:150px ;
     
 }
 /* features */

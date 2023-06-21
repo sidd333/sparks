@@ -14,7 +14,8 @@ var ecomSchema = new mongoose.Schema({
     }],
     userId:{ type: Schema.Types.ObjectId, ref: 'User'},
     
-});
+},
+{timestamps:true});
  
 //Image is a model which has a schema imageSchema
  

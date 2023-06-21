@@ -1,3 +1,29 @@
 .in{
     padding-left: 150px;
 }
+.menu{
+   font-weight: bold;
+}
+.log{
+    font-size: 1.5rem;
+    color:black;
+}
+.logo{
+    width:200px;
+    height:200px;
+    border-radius: 100%;
+}
+.log_btn{
+    padding-top: 100px;
+}
+.s_panel{
+    border:solid black 1px ;
+
+}
+.logo_newsfeed{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.black{
+    color:black;
+}

@@ -80,9 +80,7 @@ app.get("/shop", (req,res)=>{
 });
 
 //sproduct
-app.get("/sproduct", (req,res)=>{
-    res.render("sproduct")
-});
+
 
 //change_password
 app.get("/change_password", (req,res)=>{

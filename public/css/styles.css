@@ -7,9 +7,7 @@ body{
     background-color: #eeeeee;
 }
 
-a{
-    color:#ffffffe0 !important;
-}
+
 .list-group-item-action:hover{
     color: #46244C;
     background-color: #62256c;
@@ -85,4 +83,9 @@ textarea{
 .view__item{
     height: 50%;
     width: 50%;
+}
+.theme__color{
+    text-decoration: none;
+    background-color: #fff;
+        color:black !important;
 }
