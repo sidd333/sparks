@@ -1,8 +1,5 @@
 
 
-
-
-/* entry */
 body{
     background-color:rgb(240, 240, 240);
 }
@@ -19,7 +16,10 @@ textarea{
     resize:none;
 }
 
-/*classes*/
+
+
+
+
 
 .page_container{
     padding:2% 15%;
@@ -194,4 +194,5 @@ textarea{
     background-color: rgb(211, 211, 98);
     
 
-}    
+}
+
