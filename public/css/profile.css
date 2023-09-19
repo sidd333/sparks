@@ -3,6 +3,7 @@ h2{
 }
 body{
     overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
 }
 .nav-item{
    
@@ -18,7 +19,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: left;
-        padding-left: 50px;
+        padding-left:50px;
         flex-wrap: wrap;
 }
 .text{
@@ -59,8 +60,9 @@ body{
 }
 
 .profile_gallery{
-max-width: 450px;
-max-height: 500px;
+width: 400px;
+height: 300px;
+border-radius: 12px;
 
 }
 
@@ -73,14 +75,7 @@ border-radius: 100%;
    
 }
 
-.section1{
-    margin-bottom: 5px;
-    
-   
-    
 
- 
-}
 .banner{
     opacity: 0.6;
   position: absolute;
@@ -103,10 +98,11 @@ border-radius: 100%;
 }
 .section1{
     padding:30px;
-    background-image: url("../images/bg6.jpg");
+    /* background-image: url("../images/bg6.jpg"); */
+  
     background-size: auto;
-    
-    
+    background-color: #cdcdcd;
+    margin-bottom: 5px;
 }
 .user{
     color:#fff;
@@ -118,4 +114,21 @@ border-radius: 100%;
 }
 user2{
     color:#000000;
+}
+.follow{
+    color:#fff;
+    padding-left: 140px;
+    
+}
+.pad-username{
+    padding-top: 0;
+    padding-left: 30px;
+   
+}
+.brand_logo{
+    border-radius: 100%;
+    height:200px;
+    width:200px;
+    margin-left: 350px;
+    margin-top: 50px;
 }

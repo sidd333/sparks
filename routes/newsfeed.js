@@ -38,13 +38,17 @@ router.get('/newsfeed', async (req, res) => {
         if (req.isAuthenticated()) {
             const currentUser = await user.findById(req.user._id);
             const following = currentUser.following;  //returns an array with object id of following
-            const items = await imgModel.find({ userId: following }).populate('userId');
+            const items = await imgModel.find({ userId: following }).populate('userId').sort({createdAt:-1});
+            
+           const getfollowingdetails = await currentUser.populate({path: 'following'});
+          const first5 = getfollowingdetails.following.slice(0,5);
+            
             // const items2 = await imgModel.find({ userId: following }).populate('userId');
             
-            console.log(Object.keys(items))
+            
            
             
-            res.render('newsfeed', { items: items, user:currentUser });
+            res.render('newsfeed', { items: items, user:currentUser ,first5:first5});
             
 
         } else {
@@ -175,13 +179,9 @@ router.post('/newsfeed/search', async (req, res) => {
 
 router.post("/like/:_id", async (req, res) => {
     try {
-
         if(await req.isAuthenticated()) {//find the post to update Likes
             const post = await imgModel.findById(req.params._id);
             //check if youve already liked the pic or not
-
-
-
             // if post.likedby has current user
             if (post.likedby.includes(req.user._id)) {
                 const updateLikes = await post.updateOne({ likes: post.likes - 1 });
@@ -190,11 +190,6 @@ router.post("/like/:_id", async (req, res) => {
                 const updateLikes = await post.updateOne({ likes: post.likes + 1 });
                 const updateL = await imgModel.updateOne({ "_id": req.params._id }, { $push: { likedby: req.user._id } });
             }
-
-
-
-
-
 
             //redirect to quotes page
             res.redirect('/newsfeed');

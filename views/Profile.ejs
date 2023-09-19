@@ -52,27 +52,36 @@
                   <%}%>
             </div>
 
-           <div class="d-flex justify-content-center align-items-center align-middle">
-            <button class="btn shadow-none mx-4" style="align-self: flex-start; margin-top: 90px;
-            ">Following<br />
-          <%= item.following.length%>
-        </button>
-        <button class="btn shadow-none" style="align-self: flex-start; margin-top: 90px;
-            ">Followers<br />
-          <%= item.followers.length%>
-        </button>
-           </div>
+           
             <div class="user">
               <p class="break"></p>
-            <div class="fs-3 px-5">
-              <%= item.username%>
+            <div class=" pad-username">
+              <span class="fs-3 text-dark"><%= item.username%>  
+                <p class="btn shadow-none mx-4 fs-4 follow text-dark mt-4"
+                >Following<br />
+              <%= item.following.length%>
+              </p>
+            <p class="btn shadow-none text-dark fs-4 mt-4" 
+                >Followers<br />
+              <%= item.followers.length%>
+
+            </p>
+            
+              
+            
+            <br/>
+            <p class="text-dark fs-6"><%= item.bio%></p>
+            
+             </span>
+             
             </div>
             <p class="break"></p>
-            <div>
-              <%= item.bio%>
+            <div class="px-5">
+              
             </div>
-
+           
             </div>
+            <video autoplay loop muted playsinline src="/images/logo.mp4" class="brand_logo"></video>
 
             <% })%>
 
@@ -85,14 +94,14 @@
             accountUser.map((f)=>{
 
             if(e._id.toString()===f._id.toString()){ %>
-            <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#uploadModal"
+            <button type="button" class="btn btn-dark btn-lg m-4" data-bs-toggle="modal" data-bs-target="#uploadModal"
               style="margin-left: 45px;">
-              Edit Profile
+              <i class="fa-solid fa-user-pen"></i><span>Edit Profile</span>
             </button>
 
             <form action="/ecomProfile/<%=e._id%>" method="get" class="d-inline">
 
-              <button class="btn btn-primary text-light" type="submit">switch</button>
+              <button class="btn btn-primary btn-lg text-light" type="submit"><i class="fa-solid fa-user-pen"></i><span>  switch</span></button>
 
 
             </form>
@@ -106,7 +115,7 @@
 
               <form action="/ecomProfile/<%=e._id%>" method="get" class="d-inline">
 
-                <button class="btn btn-primary text-light" type="submit">switch</button>
+                <button class="btn btn-primary text-light" type="submit"><i class="fa-solid fa-toggle-on"></i><span>switch</span></button>
 
 
               </form>
@@ -115,6 +124,7 @@
 
         </div>
       </div>
+      <hr class="w-75 mx-auto">
 
 
 
@@ -164,7 +174,7 @@
 
       <div id="gallery" class="row mt-4">
         <% items.map((item)=>{ %>
-          <div class="col-lg-4 col-md-6 mb-4 ">
+          <div class="col-lg-4 col-md-6 mb-4 rounded ">
             <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>"
               class="profile_gallery">
 

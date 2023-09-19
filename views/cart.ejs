@@ -1,6 +1,49 @@
 <%- include("partials/head.ejs") %>
     <%- include("partials/navbar.ejs") %>
         <% let totalPrice=0; %>
+        <div class="container" style="padding-top: 69px;">
+            <div class="row flex-nowrap ">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 theme__color position-fixed end-0 ">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2  min-vh-100 container_style">
+                        <p href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto  text-decoration-none">
+                            <span class="fs-5 d-none d-sm-inline theme__color menu"><i class="fa-solid fa-square-caret-down"></i>  Menu</span>
+                        </p>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
+                            <li class="nav-item">
+                                <a href="/profile/<%=user._id%>" class="nav-link align-middle px-0">
+                                     <button class="btn btn-lg btn-dark"><i class="fa-sharp fa-solid fa-address-card"></i><span class="ms-1 d-none d-sm-inline  my_profile">  My profile</span></button>
+                                </a>
+                            </li>
+                           
+                            <li class="logo_newsfeed">
+                                <video autoplay loop muted playsinline src="/images/logo.mp4" class="brand_logo logo"></video>
+                            </li>
+                                
+                               
+                                    
+                               <li class="nav-item">
+                                <form class="d-flex my-4" role="search" action="/newsfeed/search" method="POST">
+                                    <input class="form-control me-2 s_panel" type="search" name="name" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-success " type="submit">Search</button>
+                                  </form>
+                               </li>
+                               <li class="nav-item mt-4 log_btn">
+                                <form action="/logout" method="post" class=" my-2">
+                                    <button class=" btn btn-danger " type="submit"><i class="fa-solid fa-right-from-bracket"></i><span class="log">  Logout</span></button>
+                                  </form>
+                            </li>
+                            
+                                    
+                            
+                           
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+
+
             <div class="container-fluid" id="cunt">
                 <div class="row flex-nowrap">
                     <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -28,7 +71,10 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#"><button class="btn btn-outline-info" id="checkout">Checkout</button></a>
+                                    <form action="" method="post">
+
+                                    </form>
+                                    <a href=""><button type="submit" class="btn btn-outline-info" id="checkout">Checkout</button></a>
                                 </li>
 
 
@@ -113,8 +159,7 @@
                             </div>
                         </div>
 
-
-
+                        
 
 
                         <%- include("partials/footer.ejs") %>

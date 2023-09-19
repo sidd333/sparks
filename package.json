@@ -1,0 +1,34 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "my first server",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm build index.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidd333/first-server.git"
+  },
+  "author": "siddhant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sidd333/first-server/issues"
+  },
+  "homepage": "https://github.com/sidd333/first-server#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "sharp": "^0.32.1"
+  }
+}

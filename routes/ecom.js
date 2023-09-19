@@ -132,7 +132,7 @@ router.get("/cart", async (req, res) => {
             path: 'cart.item',
         });
 
-        res.render("cart", { items });
+        res.render("cart", { items ,user:currentUser });
 
     } catch (error) {
         console.log(error.stack)
@@ -142,14 +142,38 @@ router.get("/cart", async (req, res) => {
 router.get("/ecom/viewPage/:_id", async (req, res) => {
     try {
         const items = await ecom.find({ _id: req.params._id });
+        const accountUser = await user.find({ "_id": req.user._id }).lean();
 
-        res.render("viewPage", { items });
+        res.render("viewPage", { items, user:accountUser });
 
     } catch (error) {
         console.log(error.stack)
     }
 });
 
+router.get("/EcommB", async (req,res)=>{
+    try {
+        const featuredItem = await ecom.find().limit(8);
+        const newItem =await  ecom.find().sort({createdAt:-1}).limit(8);
+    
+        res.render("indexEcom", {featuredItem:featuredItem,newItem:newItem})
+    } catch (error) {
+        
+    }
+   
+});
 
+router.get("/shop", async (req,res)=>{
+const items = await ecom.find({}).limit(15);
+
+    res.render("shop",{items:items});
+});
+
+
+router.post("/shop", async (req,res)=>{
+    const num=req.body.numb;
+    const items = await ecom.find({}).skip(num).limit(15);
+        res.render("shop",{items:items});
+    });
 
 module.exports = router;

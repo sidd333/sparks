@@ -13,7 +13,8 @@
     padding-bottom: 40px;
 }
 .container-fluid{
-    padding: .5% 1%;
+    padding:  0;
+    
 }
 
 h3{
@@ -39,7 +40,11 @@ p{
     font-family: 'montserrat';
     font-size:1.5rem;
 }
-
+.navbar{
+width:100%;
+position: fixed;
+z-index: 12;
+}
 
 /* Download buttons */
 .download-button{
@@ -49,7 +54,7 @@ p{
 
 .title-image{
     width:70%;
-    transform:rotate(20deg);
+  padding-top: 20px;
     margin-left:120px ;
     
 }
@@ -57,7 +62,7 @@ p{
 
 #features{
     padding: 2% 10% 0 10%;
-    position:relative;
+    
     background-color: #fff;
 }
 .feature-box{

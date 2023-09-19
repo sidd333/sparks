@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    
+
     <!-- font awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
@@ -25,83 +25,102 @@
 
     <%- include('partials/navbar.ejs') %>
 
-   
-    
+
+
 
         <div class="section2">
-           
+
             <div class="prof-box mx-auto">
-               
+
 
                 <% currentUser.map((item)=>{ %>
 
 
-                    <div>
-                        <%if ( item.img.data.toString('base64')==='' ) { %>
-                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 ">
-                                <img src="/images/ANKiT.jpg" alt="" class="profile_pic">
+                    <div class="">
+                      <%if ( item.img.data.toString('base64')==='' ) { %>
+                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-inline">
+                          <img src="/images/ANKiT.jpg" alt="" class="profile_pic">
+        
+                        </div>
+                        <%} else { %>
+                          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-inline">
+                            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>"
+                              class="profile_pic">
+        
+                          </div>
+                          <%}%>
+                    </div>
+        
+                   
+                    <div class="user">
+                      <p class="break"></p>
+                    <div class=" pad-username">
+                      <span class="fs-3 text-dark"><%= item.username%>  
+                        <p class="btn shadow-none mx-4 fs-4 follow text-dark mt-4"
+                        >Following<br />
+                      <%= item.following.length%>
+                      </p>
+                    <p class="btn shadow-none text-dark fs-4 mt-4" 
+                        >Followers<br />
+                      <%= item.followers.length%>
+        
+                    </p>
+                    
+                      
+                    
+                    <br/>
+                    <p class="text-dark fs-6"><%= item.bio%></p>
+                    
+                     </span>
+                     
+                    </div>
+                    <p class="break"></p>
+                    <div class="px-5">
+                      
+                    </div>
+                   
+                    </div>
+                    <video autoplay loop muted playsinline src="/images/logo.mp4" class="brand_logo"></video>
+        
+                    <% })%>
 
-                            </div>
-                            <%} else { %>
-                                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                                    <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>"
-                                        class="profile_pic">
+                    </div>
+                    <div class="container ">
 
-                                </div>
-                                <%}%>
-                                <div class="user2">
-                                    <p class="break"></p>
-                                    
-                                    <div class="fs-3">
-                                        <%= item.username%>
-                                    </div>
-                                    <p class="break"></p>
-
-                                    <div>
-                                        <%= item.bio%>
-                                    </div>
-
-                                </div>
-
-
-
-
-                                    <% })%>
-
+                        <% currentUser.map((e)=>{
+                            accountUser.map((f)=>{
+        
+                            if(e._id.toString()===f._id.toString()){ %>
+                            <button type="button" class="btn btn-lg btn-primary mt-4 d-inline" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" style="margin-left: 45px;"><i class="fa-solid fa-user-pen"></i><span>
+                                Edit Profile</span>
+                            </button>
+                            <form action="/profile/<%=e._id%>" method="get" class="d-inline">
+        
+                                <button class="btn btn-primary btn-lg text-light  mt-4" type="submit"><span><i class="fa-solid fa-toggle-on"></i></span> switch</button>
+        </button>
+        
+        
+                            </form>
+                            <% }else{ %>
+                                <form action="/newsfeed/follow/<%=currentUser[0]._id %>" method="post"
+                                    class="pb-4 mt-4 d-inline">
+        
+                                    <button type="submit" class="btn btn-primary btn-lg text-light m-4">follow</button>
+        
+                                </form>
+                                <form action="/profile/<%=e._id%>" method="get" class="d-inline">
+        
+                                    <button class="btn btn-primary btn-lg text-light" type="submit"><span><i class="fa-solid fa-toggle-on"></i></span> switch</button>
+        
+        
+                                </form>
+                                <% } }) }) %>
+        
                     </div>
             </div>
 
-            <div class="container ">
-
-                <% currentUser.map((e)=>{
-                    accountUser.map((f)=>{
-
-                    if(e._id.toString()===f._id.toString()){ %>
-                    <button type="button" class="btn btn-lg btn-primary mt-4 d-inline" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        style="margin-left: 45px;">
-                        Edit Profile
-                    </button>
-                    <form action="/profile/<%=e._id%>" method="get" class="d-inline">
-
-<button class="btn btn-primary btn-lg text-light  mt-4" type="submit">switch</button>
-
-
-</form>
-                    <% }else{ %>
-                        <form action="/newsfeed/follow/<%=currentUser[0]._id %>" method="post" class="pb-4 mt-4 d-inline">
-
-                            <button type="submit" class="btn btn-primary btn-lg text-light m-4">follow</button>
-
-                        </form>
-                        <form action="/profile/<%=e._id%>" method="get" class="d-inline">
-
-<button class="btn btn-primary btn-lg text-light" type="submit">switch</button>
-
-
-</form>
-                        <% } }) }) %>
-
-            </div>
+          
         </div>
 
 
@@ -148,7 +167,7 @@
 
 
         <div id="gallery" class="row my-8">
-            
+
 
             <% items.map((item,index)=>{ %>
 

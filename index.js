@@ -63,26 +63,20 @@ app.get("/sidebar", (req,res)=>{
 });
 
 
-app.get("/EcommB", (req,res)=>{
-    res.render("indexEcom")
-});
+// app.get("/EcommB", (req,res)=>{
+//     res.render("indexEcom")
+// });
 
 app.get("/cart2", (req,res)=>{
     res.render("cart2")
 });  
 
-app.get("/shop", (req,res)=>{
-    res.render("shop")
-});
 
-app.get("/shop", (req,res)=>{
-    res.render("shop")
-});
+
+
 
 //sproduct
-app.get("/sproduct", (req,res)=>{
-    res.render("sproduct")
-});
+
 
 //change_password
 app.get("/change_password", (req,res)=>{
