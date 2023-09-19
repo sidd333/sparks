@@ -144,12 +144,15 @@ router.get("/ecom/viewPage/:_id", async (req, res) => {
         const items = await ecom.find({ _id: req.params._id });
         const accountUser = await user.find({ "_id": req.user._id }).lean();
 
+
         res.render("viewPage", { items, user:accountUser });
+
 
     } catch (error) {
         console.log(error.stack)
     }
 });
+
 
 router.get("/EcommB", async (req,res)=>{
     try {
@@ -168,6 +171,7 @@ const items = await ecom.find({}).limit(15);
 
     res.render("shop",{items:items});
 });
+
 
 
 router.post("/shop", async (req,res)=>{
